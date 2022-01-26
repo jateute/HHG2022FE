@@ -1,15 +1,14 @@
-Future Engineers - Beispielrepository 
-====
-
-Dieses GitHub-Repository dient als Vorlage für Teams in Future Engineers.
+# Future Engineers
 
 ## Content
 
-* Der Ordner `Programmcode` enthält den kompletten Programmcode, der für das Roboterauto verwendet wird.
-* Im Ordner `Roboterauto` sollen sechs Fotos abgelegt werden, die das Roboterauto aus allen Richtungen zeigen.
-* Im Ordner `Technische Zeichnungen` werden Zeichnungen von Komponenten des Roboterautos oder dem gesamten Roboterauto abgelegt.
-* Der Ordner `Video` beinhaltet die Datei "video.md", die mit einem Link zu einem Youtube-Video befüllt werden muss. Das Video zeigt das Roboterauto beim Absolvieren des Spielfeldes.
++ The folder *[Code](https://github.com/jateute/HHG2022FE/tree/main/Code)* contains the full program code used on the robot.
++ The folder *[Robot](https://github.com/jateute/HHG2022FE/tree/main/Robot)* contains six pictures of the robot.
++ The folder *Technical sketches* contains sketches of components of the car.
++ The folder *[Video](https://github.com/jateute/HHG2022FE/tree/main/Video)* contains a file `video.md` which has a link to a youtube Video showing a whole run of the robot.
 
-## Einleitung
+## Introduction
 
-_In diesem Teil muss das Team das Roboterauto und den Entwicklungsprozess beschreiben._
+### 1. Choosing the hardware
++ Camera: 
+    + We choose the [openMV camera](https://openmv.io/) because it is fairly easy to use and has a lot of modules that can be used.
