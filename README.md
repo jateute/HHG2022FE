@@ -10,8 +10,8 @@
 ## Introduction
 
 ### 1. Choosing the hardware
-+ Camera: 
-    + We choose the [openMV camera](https://openmv.io/) because it is fairly easy to use and has a lot of modules that can be used.
++ Camera:
+  + We choose the [openMV camera](https://openmv.io/) because it is fairly easy to use and has a lot of modules that can be used.
 + RaspberryPi:
     + We choose the [RaspberryPi]() because it gives us a lot of freedom in terms of our soft and hardware
 + Raspberry Pi Build HAT:
