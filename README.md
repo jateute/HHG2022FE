@@ -13,6 +13,9 @@
 + Camera:
   + We choose the [openMV camera](https://openmv.io/) because it is fairly easy to use and has a lot of modules that can be used.
 + RaspberryPi:
-    + We choose the [RaspberryPi]() because it gives us a lot of freedom in terms of our soft and hardware
+    + We choose the [RaspberryPi4](https://www.raspberrypi.com/products/raspberry-pi-4-model-b/) because it gives us a lot of freedom in terms of our soft and hardware
 + Raspberry Pi Build HAT:
     + We choose the [Raspberry Pi Build HAT](https://www.raspberrypi.com/products/build-hat/), so that we didn't need to use other motors and motor drives. With this solution we can use the normal Spike Prime Motors and Sensors.
++ Battery:
+    + We choose the 
+  
