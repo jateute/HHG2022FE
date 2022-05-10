@@ -15,16 +15,16 @@ class Driving_Motor(buildhat.Motor):
         return self._cm_per_rotation
 
 class Steering_Motor(buildhat.Motor):
-    __slots__ = ("_upper_bound", "_lower_bound","_target_degrees","_speed")
+    __slots__ = ("upper_bound", "lower_bound","_target_degrees","_speed")
     def __init__(self, port : str, upper_bound : int, lower_bound : int):
         super().__init__(port)
 
-        self._upper_bound = upper_bound
-        self._lower_bound = lower_bound
+        self.upper_bound = upper_bound
+        self.lower_bound = lower_bound
         pass
 
     def run_to_position(self, degrees, speed=None, blocking=True):
-        degrees = min(max(degrees,self._lower_bound),self._upper_bound)
+        degrees = min(max(degrees,self.lower_bound),self.upper_bound)
 
         super().run_to_position(degrees,speed,blocking)
         pass
@@ -37,5 +37,15 @@ class Steering_Motor(buildhat.Motor):
 
     def update(self):
         self.run_to_position(self._target_degrees,self._speed,False)
+        pass
+
+    @property
+    def target_degrees(self) -> int:
+        return self._target_degrees
+        pass
+
+    @property
+    def target_speed(self) -> int:
+        return self._speed
         pass
     pass
