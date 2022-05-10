@@ -1,23 +1,35 @@
-import buildhat
 import buildhatHelper
-print('Init...')
+import RPi.GPIO as GPIO
 
-motor_m = buildhatHelper.Motor('A')
-motor_s = buildhatHelper.Motor('B')
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(22, GPIO.OUT) # status LED Green
+GPIO.setup(23, GPIO.OUT) # status LED Red
+GPIO.setup(24, GPIO.IN) # button
+
+
+GPIO.output(22, GPIO.LOW)
+GPIO.output(23, GPIO.HIGH)
+motor_m = buildhatHelper.Driving_Motor('A')
+motor_s = buildhatHelper.Steering_Motor('B')
 
 print('Init finished\nStarting')
 
-#motor_m.reverse()
 motor_m.set_default_speed(40)
 motor_s.set_default_speed(10)
 motor_s.run_to_position(0, 10)
-#motor_cd.set_motor_rotation(8.76 * math.pi, 'cm')
 
 
 corner = 0
 run = 0
 
-print('Start')
+GPIO.output(23, GPIO.LOW)
+GPIO.output(22, GPIO.HIGH)
+
+while GPIO.input(24) == 0:
+    pass
+
+GPIO.output(23, GPIO.HIGH)
+GPIO.output(22, GPIO.LOW)
 
 while run <= 2:
     while corner <= 3:
@@ -31,3 +43,5 @@ while run <= 2:
     run += 1
     print(run, 'run')
 
+# Programm end
+GPIO.cleanup()
