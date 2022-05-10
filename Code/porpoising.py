@@ -6,9 +6,9 @@ GPIO.setup(22, GPIO.OUT) # status LED Green
 GPIO.setup(23, GPIO.OUT) # status LED Red
 GPIO.setup(24, GPIO.IN) # button
 
-
 GPIO.output(22, GPIO.LOW)
 GPIO.output(23, GPIO.HIGH)
+
 motor_m = buildhatHelper.Driving_Motor('A')
 motor_s = buildhatHelper.Steering_Motor('B')
 
@@ -17,7 +17,6 @@ print('Init finished\nStarting')
 motor_m.set_default_speed(40)
 motor_s.set_default_speed(10)
 motor_s.run_to_position(0, 10)
-
 
 corner = 0
 run = 0
