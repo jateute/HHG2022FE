@@ -1,6 +1,6 @@
 import buildhat
 
-class Motor(buildhat.Motor):
+class Driving_Motor(buildhat.Motor):
     def set_motor_rotation(self, cm: float) -> None:
         self._cm_per_rotation = cm
         pass
@@ -13,3 +13,6 @@ class Motor(buildhat.Motor):
     @property
     def cm_per_rotation(self) -> float:
         return self._cm_per_rotation
+
+class Streering_Motor(buildhat.Motor):
+    pass
