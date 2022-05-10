@@ -14,5 +14,18 @@ class Driving_Motor(buildhat.Motor):
     def cm_per_rotation(self) -> float:
         return self._cm_per_rotation
 
-class Streering_Motor(buildhat.Motor):
+class Steering_Motor(buildhat.Motor):
+    __slots__ = ("upper_bound", "lower_bound")
+    def __init__(self, port : str, upper_bound : int, lower_bound : int):
+        super().__init__()
+
+        self.upper_bound = upper_bound
+        self.lower_bound = lower_bound
+        pass
+
+    def run_to_position(self, degrees, speed=None, blocking=True):
+        degrees = min(max(degrees,self.lower_bound),self.upper_bound)
+
+        super().run_to_position(degrees,speed,blocking)
+        pass
     pass
