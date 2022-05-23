@@ -1,4 +1,5 @@
 import os
+import serial
 device:str  = ""
 
 if os.name == 'nt':  # sys.platform == 'win32':
@@ -11,8 +12,10 @@ else:
 iterator = sorted(comports(False))
 for n, (port, desc, hwid) in enumerate(iterator, 1):
     if desc.replace(f" ({port})", "") == "OpenMV Cam USB COM Port":
-        print("Open MV")
         device: str = port
     # OpenMV Cam USB COM Port
 
-print(device)
+if len(device) <= 0: raise RuntimeError('Couldn\'t find the openmv cam')
+ser = serial.Serial(device)
+print(ser.read_all())
+if not ser.closed: ser.close()
