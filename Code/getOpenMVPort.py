@@ -17,5 +17,9 @@ for n, (port, desc, hwid) in enumerate(iterator, 1):
 
 if len(device) <= 0: raise RuntimeError('Couldn\'t find the openmv cam')
 ser = serial.Serial(device)
-print(ser.read_all())
-if not ser.closed: ser.close()
+try:
+    while True:
+        print(ser.readline().decode('utf-8'),end="")
+finally:
+    print("Closing connection")
+    ser.close()
