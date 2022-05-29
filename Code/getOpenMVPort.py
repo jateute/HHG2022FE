@@ -19,7 +19,7 @@ if len(device) <= 0: raise RuntimeError('Couldn\'t find the openmv cam')
 ser = serial.Serial(device)
 try:
     while True:
-        print(ser.readline().decode('utf-8'),end="")
+        print(ser.readline().decode('UTF-8'), end="")
 finally:
     print("Closing connection")
     ser.close()
