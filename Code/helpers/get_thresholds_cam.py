@@ -24,8 +24,8 @@ b:list[int] = []
 
 def get_value(v:list[int]) -> tuple:
     avg = sum(v)/len(v)
-    min_v = avg - 10
-    max_v = avg + 10
+    min_v = avg - 5
+    max_v = avg + 5
     if min_v > min(v): min_v = min(v)
     if max_v < max(v): max_v = max(v)
     return int(min_v), int(max_v)

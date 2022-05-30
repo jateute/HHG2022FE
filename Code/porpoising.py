@@ -1,4 +1,4 @@
-import buildhatHelper
+import buildhat_helper
 import RPi.GPIO as GPIO
 
 GPIO.setmode(GPIO.BCM)
@@ -9,8 +9,8 @@ GPIO.setup(24, GPIO.IN) # button
 GPIO.output(22, GPIO.LOW)
 GPIO.output(23, GPIO.HIGH)
 
-motor_m = buildhatHelper.Driving_Motor('A')
-motor_s = buildhatHelper.Steering_Motor('B')
+motor_m = buildhat_helper.Driving_Motor('A')
+motor_s = buildhat_helper.Steering_Motor('B')
 
 print('Init finished\nStarting')
 

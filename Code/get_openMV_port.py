@@ -16,10 +16,12 @@ for n, (port, desc, hwid) in enumerate(iterator, 1):
     # OpenMV Cam USB COM Port
 
 if len(device) <= 0: raise RuntimeError('Couldn\'t find the openmv cam')
-ser = serial.Serial(device)
+conn = serial.Serial(device)
+conn.write(b'start')
+print('Started connection with OpenMV Cam')
 try:
     while True:
-        print(ser.readline().decode('UTF-8'), end="")
+        print(conn.read_all().decode('UTF-8'), end="")
 finally:
     print("Closing connection")
-    ser.close()
+    if not conn.closed: conn.close()
