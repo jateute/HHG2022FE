@@ -50,7 +50,7 @@ class Steering_Motor():
         pass
 
     def run_to_position(self, degrees, speed=None, blocking=True):
-        degrees = min(max(degrees,self.lower_bound),self.upper_bound)
+        #degrees = min(max(degrees,self.lower_bound),self.upper_bound)
 
         self._motor.run_to_position(degrees,speed,blocking)
         pass
@@ -62,6 +62,10 @@ class Steering_Motor():
 
     def update(self):
         self._motor.run_to_position(self._target_degrees,self._speed,False)
+        pass
+
+    def set_default_speed(self, speed):
+        self._motor.set_default_speed(speed)
         pass
 
     @property
