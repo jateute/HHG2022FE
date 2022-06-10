@@ -16,6 +16,6 @@
     + We choose the [RaspberryPi4](https://www.raspberrypi.com/products/raspberry-pi-4-model-b/) because it gives us a lot of freedom in terms of our soft and hardware
 + Raspberry Pi Build HAT:
     + We choose the [Raspberry Pi Build HAT](https://www.raspberrypi.com/products/build-hat/), so that we didn't need to use other motors and motor drives. With this solution we can use the normal Spike Prime Motors and Sensors.
-+ Battery:
-    + We choose the 
++ Stacking Header:
+    + We needed a Stacking-Header, because we need a Breadboard for the competition and decided to use [this](https://www.berrybase.de/40-pin-gpio-stacking-header-f-252-r-raspberry-pi-farbig-kodiert-13-3mm) Stacking-Header
   
