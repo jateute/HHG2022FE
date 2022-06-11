@@ -2,9 +2,8 @@ import sensor, pyb
 import json, time
 
 THRESHOLDS = [
-    (35, 43, 53, 65, 33, 40), # Red pillars
-    (12, 61, -44, 0, -2, 40),# Green pillars
-    (10, -10, 0, 20, 0, 7) # Black walls
+    (32, 42, 49, 62, 27, 50), # Red pillars
+    (42, 56, -47, -27, 10, 35)# Green pillars
 ] # Constants for color tracking
 
 sensor.reset()
@@ -31,7 +30,8 @@ def main():
     for blob in img.find_blobs(THRESHOLDS, pixels_threshold=10, area_threshold=10, merge=True):
         data = {
             'type': blob.code(),
-            'rect': blob.rect()
+            'rect': blob.rect(),
+            'size': blob.size()
         }
         usb.send(f'{json.dumps(data)}\n'.encode('UTF-8'))
         img.draw_rectangle(blob.rect())
